@@ -232,7 +232,7 @@ def plotgraph(stringdatafile,alldelays,columns):
     
     # # Save the plot to a file
     # if save_path:
-    plt.savefig('./fig/fig-1.png', format='png', bbox_inches='tight')
+    plt.savefig('./fig/fig-1.png', format='png', bbox_inches='tight', pad_inches=0.1)
 
     pylab.show()
 
