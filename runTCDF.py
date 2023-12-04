@@ -229,6 +229,10 @@ def plotgraph(stringdatafile,alldelays,columns):
     nx.draw(G,pos, node_color = 'white', edge_color='black',node_size=1000,with_labels = True)
     ax = plt.gca()
     ax.collections[0].set_edgecolor("#000000") 
+    
+    # # Save the plot to a file
+    # if save_path:
+    plt.savefig('./fig/fig-1.png', format='png', bbox_inches='tight')
 
     pylab.show()
 
