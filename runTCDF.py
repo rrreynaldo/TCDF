@@ -212,6 +212,9 @@ def runTCDF(datafile):
 
 def plotgraph(stringdatafile,alldelays,columns):
     """Plots a temporal causal graph showing all discovered causal relationships annotated with the time delay between cause and effect."""
+
+    plt.figure(figsize=(10, 6))  # Width, Height in inches
+
     G = nx.DiGraph()
     for c in columns:
         G.add_node(c)
@@ -227,12 +230,13 @@ def plotgraph(stringdatafile,alldelays,columns):
     pos=nx.circular_layout(G)
     nx.draw_networkx_edge_labels(G,pos,edge_labels=edge_labels)
     nx.draw(G,pos, node_color = 'white', edge_color='black',node_size=1000,with_labels = True)
+
     ax = plt.gca()
     ax.collections[0].set_edgecolor("#000000") 
     
     # # Save the plot to a file
     # if save_path:
-    plt.savefig('./fig/fig-1.png', format='png', bbox_inches='tight', pad_inches=0.1)
+    plt.savefig('./fig/fig-1.png', format='png', bbox_inches='tight', pad_inches=0.5)
 
     pylab.show()
 
